@@ -97,6 +97,13 @@ figcaption{margin:16px auto 0;max-width:18ch;font:700 1.4rem/1.1 var(--h);color:
 @keyframes fl{0%{opacity:0;transform:translateY(0) scale(.7)}10%{opacity:1}100%{opacity:0;transform:translate(var(--x),-105vh) scale(1.2)}}
 .cf{position:fixed;top:-20px;z-index:60;width:10px;height:16px;pointer-events:none;animation:cf linear forwards}
 @keyframes cf{to{transform:translateY(110vh) rotate(540deg)}}
+.reel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 26px;-webkit-overflow-scrolling:touch}
+.clip{flex:0 0 min(280px,78vw);scroll-snap-align:center;background:var(--card);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:10px 10px 14px;box-shadow:0 20px 38px -26px rgba(58,15,36,.7);text-align:center}
+.clip video,.clip .ph{width:100%;aspect-ratio:9/16;border-radius:14px;background:#2a0a17;object-fit:contain;display:block}
+.clip .ph{display:flex;align-items:center;justify-content:center;color:#ffe9b5;font:700 1.2rem var(--h);padding:16px}
+.clip figcaption{margin:10px auto 0;max-width:none;font:700 1.35rem var(--h);color:var(--soft)}
+.swipe{text-align:center;color:var(--soft);font:700 1.2rem var(--h);margin-top:4px}
+.final button{margin-top:26px;padding:15px 30px;border-radius:999px;background:#3a0f24;color:#ffe9b5;font-weight:600}
 footer{text-align:center;padding:25px var(--edge) 54px;font:700 1.25rem var(--h);color:var(--soft)}
 @media(max-width:720px){.spine{left:8px}.section{padding-top:76px}.gallery,.funny,.never{grid-template-columns:1fr}.gallery{max-width:390px;gap:42px}.photo:nth-child(2),.photo:nth-child(2).on{transform:none}.photo>div{aspect-ratio:5/6}.describe article:nth-child(even){margin-left:0}.funny .wide{grid-column:auto}.never article{min-height:160px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
@@ -197,9 +204,15 @@ footer{text-align:center;padding:25px var(--edge) 54px;font:700 1.25rem var(--h)
   </div>
 </section>
 </main>
+<section class="section clips" id="clips" hidden>
+  <p class="eyebrow reveal">from everyone who loves you</p>
+  <h2 class="reveal">Your Surprise</h2>
+  <div class="reel reveal" id="reel"></div>
+  <p class="swipe">swipe to watch them all →</p>
+</section>
 <footer>Made with ❤️ by Maharshi-fyuf.</footer>
 
-<div class="final" id="final"><p>Awwww...</p><h2>Aunty it is, forever 🎂</h2><p>Thank you, Mamta</p></div>
+<div class="final" id="final"><p>Awwww...</p><h2>Aunty it is, forever 🎂</h2><p>Thank you, Mamta</p><button id="surprise">Here’s your surprise 🎁</button></div>
 
 <script>
 // Add her photos here as data: image URLs, in order. Empty = placeholder.
@@ -280,7 +293,36 @@ no.onclick = function(){
   no.style.transform = "scale(" + Math.max(.15, 1 - n * .22) + ")";
   if (n >= 4){ no.style.opacity = 0; no.style.pointerEvents = "none"; yes.style.transform = "scale(2)"; }
 };
+// Add each clip (2MB or less) as {src, from}. Files live in assets/videos/ next to this page.
+var CLIPS = [
+  {src: "assets/videos/clip1-maharshi.mp4", from: "Maharshi-fyuf, the developer (and the reason Aunty exists)"},
+  {src: "assets/videos/clip2-family.mp4", from: "your family"},
+  {src: "assets/videos/clip3-smriti.mp4", from: "Smriti"},
+  {src: "assets/videos/clip4-payal.mp4", from: "Payal"},
+  {src: "assets/videos/clip5-tanika.mp4", from: "Tanika"},
+  {src: "assets/videos/clip6-raj.mp4", from: "Raj"},
+];
+function buildClips(){
+  var reel = $("#reel"); if (reel.children.length) return;
+  var list = CLIPS.length ? CLIPS : [{from: "a friend"}, {from: "family"}, {from: "everyone"}];
+  list.forEach(function(c){
+    var f = document.createElement("figure"); f.className = "clip"; var m;
+    if (c.src){
+      m = document.createElement("video"); m.src = c.src; m.controls = true; m.preload = "metadata"; m.playsInline = true;
+      m.addEventListener("play", function(){ reel.querySelectorAll("video").forEach(function(v){ if (v !== m) v.pause(); }); });
+    } else { m = document.createElement("div"); m.className = "ph"; m.textContent = "clip goes here"; }
+    var cap = document.createElement("figcaption"); cap.textContent = c.from ? "From " + c.from : "";
+    f.appendChild(m); f.appendChild(cap); reel.appendChild(f);
+  });
+}
 yes.onclick = function(){ $("#final").classList.add("show"); hearts(42); confetti(); };
+$("#surprise").onclick = function(){
+  buildClips();
+  $("#final").classList.remove("show");
+  var s = $("#clips"); s.hidden = false;
+  s.querySelectorAll(".reveal").forEach(function(e){ e.classList.add("on"); });
+  s.scrollIntoView({behavior: reduced ? "auto" : "smooth"});
+};
 </script>
 </body>
 </html>
