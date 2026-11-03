@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Mamta 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff1d9;--paper:#fffaf0;--ink:#3a0f24;--soft:#85526a;--pink:#d4246f;--gold:#f2a516;--teal:#0e7c78;--card:rgba(255,250,240,.78);--edge:clamp(20px,6vw,76px);--d:"Rozha One",Georgia,serif;--b:"Hind",system-ui,sans-serif;--h:"Caveat",cursive;--ease:cubic-bezier(.22,.61,.36,1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d0813;--paper:#2b1020;--ink:#ffeccf;--soft:#d9a9bd;--card:rgba(52,18,38,.78)}}
+:root[data-theme="dark"]{--bg:#1d0813;--paper:#2b1020;--ink:#ffeccf;--soft:#d9a9bd;--card:rgba(52,18,38,.78)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--b);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(50% 35% at 6% 4%,rgba(242,165,22,.35),transparent 70%),radial-gradient(45% 32% at 95% 38%,rgba(212,36,111,.2),transparent 70%)}
+button{font:inherit;border:0;cursor:pointer;color:inherit}
+button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.spine{position:fixed;z-index:1;left:50%;top:0;height:100%;width:2px;opacity:.25;background:repeating-linear-gradient(var(--soft) 0 7px,transparent 7px 15px);pointer-events:none}
+.spine i{display:block;height:0;background:repeating-linear-gradient(var(--pink) 0 7px,transparent 7px 15px)}
+.eyebrow{font:700 1.4rem var(--h);color:var(--pink)}
+.hero{min-height:100svh;padding:30px var(--edge);display:grid;place-content:center;text-align:center}
+h1{font:400 clamp(2.5rem,8.5vw,5.2rem)/1.1 var(--d);margin-top:6px}
+h1 em{font-style:normal;color:var(--pink)}
+.sub{color:var(--soft);font-size:1.15rem;margin-top:14px}
+.open{justify-self:center;margin-top:38px;padding:15px 30px;border-radius:999px;background:var(--gold);color:#3a0f24;font-weight:600;box-shadow:0 16px 30px -14px rgba(212,36,111,.55);transition:transform .35s var(--ease)}
+.open:hover{transform:translateY(-4px)}
+.hint{margin-top:12px;color:var(--soft);font-size:.9rem}
+.section{max-width:1200px;margin:auto;padding:92px var(--edge) 26px}
+.section>.eyebrow,.section>h2{text-align:center}
+h2{font:400 clamp(2rem,5vw,3rem)/1.18 var(--d)}
+.section>h2{margin:2px auto 46px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,42px);align-items:center;max-width:1060px;margin:auto}
+.photo{position:relative;text-align:center}
+.photo:nth-child(2){transform:translateY(45px)}
+.photo:nth-child(2).on{transform:translateY(45px)}
+.photo>div{aspect-ratio:4/5;overflow:hidden;border:7px solid var(--paper);border-radius:16px;box-shadow:0 22px 38px -22px rgba(58,15,36,.6);background:linear-gradient(145deg,#f7c97a,#f08fb6);display:flex;align-items:center;justify-content:center;padding:16px;color:#3a0f24;font:700 1.2rem var(--h)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo:before{content:"";position:absolute;top:-11px;z-index:2;width:64px;height:23px;background:rgba(242,165,22,.7)}
+.photo:nth-child(2):before{right:20px;transform:rotate(8deg)}
+.photo:not(:nth-child(2)):before{left:20px;transform:rotate(-8deg)}
+figcaption{margin:16px auto 0;max-width:18ch;font:700 1.4rem/1.1 var(--h);color:var(--soft)}
+.describe{max-width:720px;margin:auto;display:grid;gap:13px}
+.describe article{padding:19px 24px;border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.35);box-shadow:0 14px 30px -23px rgba(58,15,36,.7);font:400 clamp(1.05rem,2.5vw,1.3rem) var(--d);transition:transform .35s var(--ease)}
+.describe article:nth-child(even){margin-left:7%}
+.describe article:hover{transform:translateX(7px)}
+.describe .hl{background:linear-gradient(100deg,rgba(242,165,22,.35),rgba(212,36,111,.22))}
+.letter{max-width:710px;margin:auto;padding:clamp(28px,6vw,58px);background:var(--card);border:1px solid rgba(255,255,255,.35);border-radius:24px;box-shadow:0 28px 55px -33px rgba(58,15,36,.7);font:500 clamp(1.25rem,2.4vw,1.5rem)/1.55 var(--h)}
+.letter p+p{margin-top:14px}
+.hello,.sign{font:700 2rem var(--h);color:var(--pink)}
+.sign{text-align:right;margin-top:26px!important}
+.sign small{font-size:1.35rem;color:var(--soft)}
+.funny{max-width:800px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.funny article{min-height:120px;padding:21px;display:flex;gap:14px;background:var(--card);border:1px solid rgba(255,255,255,.35);border-radius:17px;box-shadow:0 14px 30px -23px rgba(58,15,36,.7);font-size:1.6rem;transition:transform .35s var(--ease)}
+.funny article:hover{transform:translateY(-5px) rotate(-.5deg)}
+.funny p{font-size:1rem}
+.funny b,.funny span{display:block}
+.funny span{color:var(--pink);font:700 1.2rem var(--h)}
+.funny .wide{grid-column:1/-1;min-height:auto}
+.warning{max-width:590px;margin:42px auto 0;padding:26px 28px 30px;text-align:center;color:#2a1608;background:repeating-linear-gradient(135deg,#ffc83d 0 20px,#ffd25c 20px 40px);border:6px solid #2a1608;border-radius:10px}
+.warning h3{font:700 clamp(1.8rem,5vw,2.4rem)/1 var(--b);letter-spacing:.04em}
+.warning p{font-weight:700;margin:16px 0 6px}
+.warning ol{display:inline-block;text-align:left;padding-left:25px;font-weight:600;line-height:1.7}
+.warning strong,.warning small{display:block}
+.warning strong{font:400 1.3rem var(--d);margin-top:16px}
+.warning small{font-size:.82rem;margin-top:8px}
+.never{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;max-width:960px;margin:auto}
+.never article{min-height:210px;padding:26px 24px;display:grid;place-content:center;text-align:center;background:var(--card);border:1px solid rgba(255,255,255,.35);border-radius:22px;box-shadow:0 20px 38px -26px rgba(58,15,36,.7);font:1.8rem var(--d);color:var(--pink);transition:transform .4s var(--ease)}
+.never article:hover{transform:translateY(-7px)}
+.never p{margin-top:12px;color:var(--ink);font:400 1.1rem/1.55 var(--b)}
+.giftwrap{display:flex;flex-direction:column;align-items:center}
+.box{width:164px;height:148px;position:relative;background:none;perspective:700px}
+.box b{position:absolute;inset:auto 10px 0;height:94px;border-radius:8px;background:linear-gradient(145deg,#ff7fb0,var(--pink));box-shadow:0 20px 35px -17px rgba(58,15,36,.6)}
+.box i{position:absolute;inset:25px 0 auto;height:37px;background:linear-gradient(145deg,var(--gold),#d98a00);border-radius:8px;transform-origin:top;transition:transform .9s var(--ease)}
+.box span{position:absolute;top:-8px;left:65px;z-index:2;font-size:1.7rem;transition:.4s}
+.box.open i{transform:rotateX(-117deg)}
+.box.open span{opacity:0;transform:translateY(-18px)}
+.giftwrap>p{font:700 1.3rem var(--h);color:var(--soft);margin-top:17px}
+.reveal-msg{opacity:0;transform:translateY(12px);margin-top:22px;text-align:center;font:700 1.6rem/1.35 var(--h);transition:.8s var(--ease)}
+.reveal-msg.show{opacity:1;transform:none}
+.reveal-msg strong{font:400 1.5rem var(--d);color:var(--pink)}
+.treat{padding-bottom:92px}
+.treatcard{max-width:650px;margin:auto;padding:clamp(30px,7vw,58px) clamp(20px,6vw,55px);text-align:center;background:var(--card);border:1px solid rgba(255,255,255,.35);border-radius:26px;box-shadow:0 26px 55px -31px rgba(58,15,36,.7)}
+.treatcard h2{font-size:clamp(1.7rem,4vw,2.5rem);margin-top:4px}
+#q{font:700 1.4rem var(--h);color:var(--soft);margin-top:14px}
+.btns{display:flex;justify-content:center;align-items:center;gap:14px;min-height:64px;margin-top:28px}
+.btns button{min-width:112px;padding:14px 22px;border-radius:999px;font-weight:600;letter-spacing:.06em;transition:.45s var(--ease)}
+#yes{background:var(--pink);color:#fff}
+#no{background:var(--paper);border:1px solid var(--soft);color:var(--soft)}
+.final{position:fixed;z-index:100;inset:0;display:grid;place-content:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 25%,#ffe9b5,#f48ab4);color:#3a0f24;opacity:0;visibility:hidden;transition:1s var(--ease)}
+.final.show{opacity:1;visibility:visible}
+.final p{font:700 clamp(2rem,7vw,4rem) var(--h)}
+.final h2{font-size:clamp(2rem,7vw,4.4rem);margin:4px 0 14px}
+.fl{position:fixed;z-index:110;bottom:-30px;pointer-events:none;font-size:1.4rem;animation:fl 3.4s ease-in forwards}
+@keyframes fl{0%{opacity:0;transform:translateY(0) scale(.7)}10%{opacity:1}100%{opacity:0;transform:translate(var(--x),-105vh) scale(1.2)}}
+.cf{position:fixed;top:-20px;z-index:60;width:10px;height:16px;pointer-events:none;animation:cf linear forwards}
+@keyframes cf{to{transform:translateY(110vh) rotate(540deg)}}
+footer{text-align:center;padding:25px var(--edge) 54px;font:700 1.25rem var(--h);color:var(--soft)}
+@media(max-width:720px){.spine{left:8px}.section{padding-top:76px}.gallery,.funny,.never{grid-template-columns:1fr}.gallery{max-width:390px;gap:42px}.photo:nth-child(2),.photo:nth-child(2).on{transform:none}.photo>div{aspect-ratio:5/6}.describe article:nth-child(even){margin-left:0}.funny .wide{grid-column:auto}.never article{min-height:160px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="spine"><i id="fill"></i></div>
+<main>
+<section class="hero">
+  <p class="eyebrow reveal">a little something for</p>
+  <h1 class="reveal">Happy Birthday,<br><em>Mamta</em> 🎂</h1>
+  <p class="sub reveal">Also known as Aunty.</p>
+  <button class="open reveal" id="openBtn">✦ &nbsp;Open your gift</button>
+  <p class="hint reveal" id="hint">tap to begin ✨</p>
+</section>
+
+<section class="section">
+  <p class="eyebrow reveal">kept safe, always</p>
+  <h2 class="reveal">Three Little Time Capsules</h2>
+  <div class="gallery">
+    <figure class="photo reveal"><div data-p="0">photo goes here</div><figcaption>The Navratri look that started it all</figcaption></figure>
+    <figure class="photo reveal"><div data-p="1">photo goes here</div><figcaption>Proof that you notice everything</figcaption></figure>
+    <figure class="photo reveal"><div data-p="2">photo goes here</div><figcaption>One photo. A lot of stories.</figcaption></figure>
+  </div>
+</section>
+
+<section class="section">
+  <p class="eyebrow reveal">the very accurate version</p>
+  <h2 class="reveal">If I Had To Describe You...</h2>
+  <div class="describe">
+    <article class="reveal">Caring, even when she pretends not to be</article>
+    <article class="reveal">Always has an opinion, usually a good one</article>
+    <article class="reveal">Gives advice before anyone asks</article>
+    <article class="reveal">Says “I’m not an aunty” and loses the argument</article>
+    <article class="reveal">Remembers who said what, and when</article>
+    <article class="reveal hl">One of the people I’m really glad I know ❤️</article>
+  </div>
+</section>
+
+<section class="section">
+  <p class="eyebrow reveal">just for you</p>
+  <h2 class="reveal">A Letter</h2>
+  <article class="letter reveal">
+    <p class="hello">Dear Aunty,</p>
+    <p>Happy Birthday.</p>
+    <p>It started as a joke on one Navratri night, and somehow it became your name. But the person behind the name is the real story: someone who cares, who shows up, and who notices the things everyone else misses.</p>
+    <p>Thank you for being my friend. I hope this year gives you everything you’re working for. Keep being exactly who you are.</p>
+    <p>Happy Birthday, Mamta.</p>
+    <p class="sign">Maharshi-fyuf<br><small>the friend who started the name</small></p>
+  </article>
+</section>
+
+<section class="section">
+  <p class="eyebrow reveal">official findings</p>
+  <h2 class="reveal">The Aunty Report</h2>
+  <div class="funny">
+    <article class="reveal">🪔<p><b>Origin</b><span>One Navratri night, no going back</span></p></article>
+    <article class="reveal">👀<p><b>Observation skills</b><span>Nothing escapes her</span></p></article>
+    <article class="reveal">💬<p><b>Advice</b><span>Free, unlimited, never requested</span></p></article>
+    <article class="reveal">🏅<p><b>Title</b><span>Aunty of the Year, undefeated</span></p></article>
+    <article class="wide reveal">📢<p><b>Status</b><span>Officially denied. Widely believed anyway.</span></p></article>
+  </div>
+  <aside class="warning reveal">
+    <h3>⚠ NOTICE</h3>
+    <p>Saying “I’m not an aunty” may lead to:</p>
+    <ol><li>More people calling you Aunty.</li><li>A louder Aunty.</li><li>The Navratri story at every festival.</li><li>Me bringing it up again.</li></ol>
+    <strong>Please accept the title.</strong>
+    <small>This notice is active from your birthday.</small>
+  </aside>
+</section>
+
+<section class="section">
+  <p class="eyebrow reveal">just so we’re clear</p>
+  <h2 class="reveal">Some Things Never Change</h2>
+  <div class="never">
+    <article class="reveal">♡<p>No matter how old you get,<br>you’ll always be Aunty.</p></article>
+    <article class="reveal">✦<p>No matter how busy life gets,<br>I’ll be the friend who started it.</p></article>
+    <article class="reveal">♥<p>No matter where life takes you,<br>I’ll always wish you the best.</p></article>
+  </div>
+</section>
+
+<section class="section">
+  <p class="eyebrow reveal">one more thing</p>
+  <h2 class="reveal">A Final Surprise</h2>
+  <div class="giftwrap reveal">
+    <button class="box" id="box" aria-label="Open your final surprise"><i></i><b></b><span>🎀</span></button>
+    <p id="boxHint">tap the box</p>
+    <div class="reveal-msg" id="boxMsg">Thank you for being you.<br><strong>Happy Birthday, Mamta 🎂</strong></div>
+  </div>
+</section>
+
+<section class="section treat">
+  <div class="treatcard reveal">
+    <p class="eyebrow">the important question</p>
+    <h2>Now that you’re a year older...</h2>
+    <p id="q">Will you finally accept the title of Aunty? 😌</p>
+    <div class="btns"><button id="yes">YES</button><button id="no">NO</button></div>
+  </div>
+</section>
+</main>
+<footer>Made with ❤️ by Maharshi-fyuf.</footer>
+
+<div class="final" id="final"><p>Awwww...</p><h2>Aunty it is, forever 🎂</h2><p>Thank you, Mamta</p></div>
+
+<script>
+// Add her photos here as data: image URLs, in order. Empty = placeholder.
+var PHOTOS = ["", "", ""];
+
+var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function $(s){ return document.querySelector(s); }
+
+PHOTOS.forEach(function(src, k){
+  if (!src) return;
+  var d = document.querySelector('[data-p="' + k + '"]');
+  d.textContent = "";
+  var im = document.createElement("img"); im.src = src; im.alt = "A memory with Mamta"; d.appendChild(im);
+});
+
+function hearts(n){
+  if (reduced) return;
+  var set = ["❤️", "🧡", "💛", "💖"];
+  for (var k = 0; k < n; k++) (function(k){
+    setTimeout(function(){
+      var e = document.createElement("span");
+      e.className = "fl"; e.textContent = set[k % set.length];
+      e.style.left = Math.random() * 100 + "vw";
+      e.style.setProperty("--x", (Math.random() * 140 - 70) + "px");
+      document.body.appendChild(e);
+      e.onanimationend = function(){ e.remove(); };
+    }, k * 75);
+  })(k);
+}
+function confetti(){
+  if (reduced) return;
+  var cols = ["#f2a516", "#d4246f", "#0e7c78", "#ffe9b5"];
+  for (var k = 0; k < 70; k++){
+    var c = document.createElement("span");
+    c.className = "cf";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.background = cols[k % 4];
+    c.style.animationDuration = (2 + Math.random() * 2) + "s";
+    c.style.animationDelay = (Math.random() * .6) + "s";
+    document.body.appendChild(c);
+    setTimeout(function(el){ el.remove(); }, 5000, c);
+  }
+}
+
+var fill = $("#fill");
+addEventListener("scroll", function(){
+  var d = document.documentElement;
+  fill.style.height = (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + "%";
+}, {passive: true});
+
+var els = document.querySelectorAll(".reveal");
+if (reduced || !("IntersectionObserver" in window)) {
+  els.forEach(function(e){ e.classList.add("on"); });
+} else {
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, {threshold: .14});
+  els.forEach(function(e){ io.observe(e); });
+}
+
+var opened = false;
+$("#openBtn").onclick = function(){
+  if (opened) return; opened = true;
+  confetti(); $("#hint").textContent = "happy birthday ✨";
+  setTimeout(function(){ window.scrollTo({top: innerHeight, behavior: reduced ? "auto" : "smooth"}); }, 900);
+};
+$("#box").onclick = function(e){
+  var b = e.currentTarget; if (b.classList.contains("open")) return;
+  b.classList.add("open"); $("#boxHint").textContent = ""; hearts(26);
+  setTimeout(function(){ $("#boxMsg").classList.add("show"); }, 360);
+};
+var n = 0, msgs = ["Think again 😌", "Wrong answer 😭", "You know you want to 😏", "The NO button is getting nervous..."];
+var yes = $("#yes"), no = $("#no");
+no.onclick = function(){
+  n++;
+  $("#q").textContent = msgs[Math.min(n - 1, 3)];
+  yes.style.transform = "scale(" + (1 + n * .3) + ")";
+  no.style.transform = "scale(" + Math.max(.15, 1 - n * .22) + ")";
+  if (n >= 4){ no.style.opacity = 0; no.style.pointerEvents = "none"; yes.style.transform = "scale(2)"; }
+};
+yes.onclick = function(){ $("#final").classList.add("show"); hearts(42); confetti(); };
+</script>
+</body>
+</html>
